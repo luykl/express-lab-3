@@ -11,36 +11,37 @@
     <header>
         <h1>Oceans Unit Assignment Tracker</h1>
     </header>
+   
     <main>
         <h2>Assignments</h2>
 
         <table>
-		<thead>
-			<tr>
-				<th>Assignment</th>
-				<th>Score</th>
-				<th>Total</th>
-				<th>Completed</th>
-				<th>Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-		{{#each assignments}}
-			<tr>
-				<td>{{name}}</td>
-				<td>{{score}}</td>
-				<td>{{totalPossible}}</td>
-				<td>{{complete}}</td>
-				<td>
-					<a href="/assignments/{{id}}/edit-assignment">Edit</a>
-					<a href="/assignment/{{id}}/delete-assignment">Delete</a>
-				</td>
-			</tr>
-		{{/each}}
-		</tbody>
-	</table>
-    <p>Overall Average: %</p>
-    <p><a href="/assignment/add-assignment"></a>Add an Assignment</p>
+			<thead>
+				<tr>
+					<th>Assignment</th>
+					<th>Score</th>
+					<th>Total</th>
+					<th>Completed</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#each assignments}}
+				<tr>
+					<td>{{name}}</td>
+					<td>{{score}}</td>
+					<td>{{totalPossible}}</td>
+					<td>{{#if complete}}yes{{else}}no{{/if}}</td>
+					<td>
+						<a href="/assignments/{{id}}/edit-assignment">Edit</a>
+						<a href="/assignments/{{id}}/delete-assignment-confirmation">Delete</a>
+					</td>
+				</tr>
+			{{/each}}
+			</tbody>
+		</table>
+    	<p>Overall Average: {{average}}%</p>
+    	<p><a href="/assignments/add-assignment">Add an Assignment</a></p>
 
     </main>
     

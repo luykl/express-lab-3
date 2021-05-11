@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Express Lab 3</title>
+</head>
+<body>
+    <header>
+        <h1>Oceans Unit Assignment Tracker</h1>
+    </header>
+    <main>
+        <h1>Assignment Added</h1>
+        <p>This assignment was added.</p>
+        <p><label>Name: </label> {{assignment.name}}</p>
+        <p><label>Your Score: </label> {{assignment.score}}</p>
+        <p><label>Total Possible Score: </label> {{assignment.totalPossible}}</p>
+        <p><label>Complete: </label>{{#if assignment.complete}}yes{{else}}no{{/if}}</p>
+        <p><a href="/">View all assignments</a></p>
+
+    </main>
+    
+</body>
+</html>

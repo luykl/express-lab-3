@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Express Lab 3</title>
+</head>
+<body>
+    <header>
+        <h1>Oceans Unit Assignment Tracker</h1>
+    </header>
+    <main>
+        <h2>Add Assignment</h2>
+        <form action="/assignments/add-assignment-confirmation" method="post">
+            <p>
+                <label for="name">Assignment Name:</label>
+                <input name="name" id="name" required />
+            </p>
+            <p>
+                <label for="score">Your Score: </label>
+                <input name="score" id="score" type="number" />
+            </p>
+            <p>
+                <label for="totalPossible">Total Possible Score: </label>
+                <input name="totalPossible" id="totalPossible" type="number" />
+            </p>
+            <p>
+                <label for="complete">Have you completed this assignment?</label>
+                <input name="complete" id="complete" type="checkbox"/>
+		    </p>
+            <p><input type="submit" value="Add"/></p>
+            <p><a href="/">Cancel</a></p>   
+        </form>
+    </main>
+    
+</body>
+</html>

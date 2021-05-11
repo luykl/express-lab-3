@@ -8,31 +8,31 @@
     <title>Express Lab 3</title>
 </head>
 <body>
-    <header><h1>Ocean Unit Assignment Tracker</h1></header>
+    <header>
+		<h1>Oceans Unit Assignment Tracker</h1>
+	</header>
     <main>
         <h2>Edit Assignment</h2>
         <form action="/assignments/{{assignment.id}}/edit-assignment-confirmation" method="post">
-		<p>
-			<label for="name">Assignment Name:</label>
-			<input name="name" value="{{assignment.name}}" id="name" required />
-		</p>
-		<p>
-			<label for="score">Your Score:</label>
-			<input name="score" value="{{assignment.score}}" id="score" type="number" />
-		</p>
-		<p>
-			<label for="totalPossible">Total Possible Score:</label>
-			<input name="totalPossible" value="{{assignment.totalPossible}}" id="totalPossible" type="number" />
-		</p>
-		<p>
-			<label for="complete">Have you completed this assignment?</label>
-			<input name="complete" id="complete" type="checkbox"{{#if assignment.complete}}checked{{/if}}/>
-		</p>
-		<p>
-			<input type="submit" value="Save" />
-			<a href="/">Cancel</a>
-		</p>
-	</form>
+			<p>
+				<label for="name">Assignment Name:</label>
+				<input name="name" value="{{assignment.name}}" id="name" required />
+			</p>
+			<p>
+				<label for="score">Your Score:</label>
+				<input name="score" value="{{assignment.score}}" id="score" type="number" />
+			</p>
+			<p>
+				<label for="totalPossible">Total Possible Score:</label>
+				<input name="totalPossible" value="{{assignment.totalPossible}}" id="totalPossible" type="number" />
+			</p>
+			<p>
+				<label for="complete">Have you completed this assignment?</label>
+				<input name="complete" id="complete" type="checkbox"{{#if assignment.complete}}checked{{/if}}/>
+			</p>
+			<p><input type="submit" value="Save"/></p>
+			<p><a href="/">Cancel</a></p>
+		</form>
 
     </main>
     

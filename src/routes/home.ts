@@ -1,12 +1,13 @@
 import express from "express";
-import {readAllAssignments} from "../model/assignments-data";
+import {displayAverage, readAllAssignments} from "../model/assignments-data";
 
 
 const routes = express.Router();
 
 routes.get("/", (req, res) => {
     const assignments = readAllAssignments();
-    res.render('home', {assignments});
+    const average = displayAverage();
+    res.render("home", {assignments, average});
 });
 
 

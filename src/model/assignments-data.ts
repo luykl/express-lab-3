@@ -1,6 +1,6 @@
 import Assignment from "./Assignment";
 
-let allAssignments:Assignment[] = [];
+export let allAssignments:Assignment[] = [];
 let nextId:number = 1;
 
 export function createAssignment(assignment:Assignment):void {
@@ -30,4 +30,35 @@ export function updateAssignment(assignment:Assignment):boolean {
 export function readAssignmentById(id:number): Assignment|undefined {
     return allAssignments.find(assignment => assignment.id ===id);
 }
+
+export function deleteAssignment(id: number): boolean {
+    const index = allAssignments.findIndex(x => x.id === id);
+    if (index == -1) {
+      return false;
+    } else {
+      allAssignments.splice(index, 1);
+      return true;
+    }
+  }
+
+  export function getAverage(array:Assignment[]):number {
+      if (array.length === 0) {
+          return 0;
+      } else {
+        let yourScore:number = 0;
+        let totalScore:number = 0;
+        for (let assignment of array) {
+            if (assignment.complete) {
+                yourScore += Number(assignment.score)
+                totalScore += Number(assignment.totalPossible)
+                
+            }
+        }
+        return yourScore / totalScore * 100;
+      }
+  }
+
+  export function displayAverage():string {
+      return (getAverage(allAssignments)).toFixed(1);
+  }
 
