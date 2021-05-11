@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Express Lab 3</title>
+</head>
+<body>
+    <header>
+        <h1>Oceans Unit Assignment Tracker</h1>
+    </header>
+    <main>
+        <h2>Assignments</h2>
+
+        <table>
+		<thead>
+			<tr>
+				<th>Assignment</th>
+				<th>Score</th>
+				<th>Total</th>
+				<th>Completed</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+		{{#each assignments}}
+			<tr>
+				<td>{{name}}</td>
+				<td>{{score}}</td>
+				<td>{{totalPossible}}</td>
+				<td>{{complete}}</td>
+				<td>
+					<a href="/assignments/{{id}}/edit-assignment">Edit</a>
+					<a href="/assignment/{{id}}/delete-assignment">Delete</a>
+				</td>
+			</tr>
+		{{/each}}
+		</tbody>
+	</table>
+    <p>Overall Average: %</p>
+    <p><a href="/assignment/add-assignment"></a>Add an Assignment</p>
+
+    </main>
+    
+</body>
+</html>
