@@ -11,10 +11,7 @@ routes.get("/assignments", (req, res) => {
 
 })
 
-const summary:Summary = {
-    overallAverage: displayAverage(),
-    assignments: allAssignments
-}
+
 
 routes.get("/summary", (req, res) => {
     const summary:Summary = {
